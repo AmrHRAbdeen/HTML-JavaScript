@@ -20,7 +20,7 @@ function RandomShape ()
 return randomized;
 }
 
-var ClickedTime , Creationtime , ReactionTime ,RandomTime; 
+var ClickedTime , Creationtime , ReactionTime1,ReactionTime2 ,RandomTime; 
 
 function Display_Again () 
 	{
@@ -53,8 +53,10 @@ function Display_Again ()
 	document.getElementById("RedSquare").onclick=function()
 	{
 		ClickedTime=Date.now();
-		ReactionTime=(ClickedTime-Creationtime)/1000;
-		document.getElementById("TimeTable").innerHTML=ReactionTime;
+		ReactionTime1=(ClickedTime-Creationtime)/1000;
+		ReactionTime2=((ClickedTime-Creationtime)/1000)/60;
+		document.getElementById("TimeTableSec").innerHTML=ReactionTime1;
+		document.getElementById("TimeTableMinutes").innerHTML=ReactionTime2;
 		//document.getElementById("RedSquare").style.display="none"; or Code it pro. as following
 		this.style.display="none"; // this is refering to the RedSquare we don't need to repeat the same command
 		// to hid a style we set the style.dispaly to none .To show it back we set style.display to block
