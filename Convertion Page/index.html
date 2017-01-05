@@ -1,0 +1,39 @@
+<!-- Conversion Project -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Conversion page</title>
+</head>
+<body>
+<!-- Equations that will be used :
+
+ From kiloGram to pound and vice-versa
+1 kg = 2.2046226218 pound
+Celsuis=5/9(F-32) where F stands for Fahrenheit
+1 inch = 2.54 cm
+-->
+<h2> My Conversion page || Mechatraonicsawy Page </h2>
+<br / >
+<!--conversion from Kilograms to pounds-->
+<h3> conversion from Kilograms to pounds </h3>
+<input id="KiloToPoundInput" type="text"/>
+<button id="KiloToPoundButton">Convert</button>
+<div id="KTPdiv" style="font-size:20px;"></div>
+
+<script type="text/javascript">
+document.getElementById("KiloToPoundButton").onclick=function ()
+{
+var KTPconversion =document.getElementById("KiloToPoundInput").value;
+KTPconversion*=2.2046226218;
+document.getElementById("KTPdiv").innerHTML=" <br />It's "+KTPconversion+" Pounds";
+
+}	
+
+
+
+
+</script>
+
+
+</body>
+</html>

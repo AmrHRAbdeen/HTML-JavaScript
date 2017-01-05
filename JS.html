@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+	<head>
+		<title> JavaScript </title>
+<style type="text/css">
+#Circle { height: 100px; width: 100px; border-radius: 50px; background-color:blue;}
+
+
+</style>
+	</head>
+<body>
+
+<div id="Circle"></div>
+<br />
+<button id="Click" > Click Me!</button>
+<button onclick="alert('That is a JS code')">JS code runner</button> 
+
+<p id="P_Name"> My Name is Amr Abdeen </p>
+
+<button id="textAppender"> Text Appender </button>
+<p id="Append"> JavaScript is ..... </p>
+
+<button id="TextCreator">Text Creator</button>
+<div id="EmptyDiv"></div>
+
+<input id="MyInput" type="text"/>
+<button id="Submit"> Submit</button>
+<p id="Para"> New Para </p>
+
+
+<!-- 88 Conditions in JS -->
+<input id="MyConditionalInput" type="text"  />
+<button id="ConditionalButton"> Conditional Button </button> 
+
+<br / >
+<hr />
+<!-- 89 Episode: How Many Fingers ?-->
+<input id="MyFingersInput" type="text"  />
+<button id="MyFingersButton"> MyFingersButton </button> 
+
+<!-- 90 Episode: for loop "Empty"-->
+
+<!-- 91- Episdoe : While loop -->
+<br / >
+<input id="WhileInput" type="text" />
+<button id="WhileLoopButton"> While-Guess</button>
+
+<!-- 92-Functions -->
+<div id="functionDiv"></div>
+ 
+ <script type="text/javascript">
+ 
+// 94- Episode: JavaScript Project
+/* *************** In a separate File :D ********/
+
+
+// 92- Episode: Functions in JavaScript
+//Declaring a Function
+function adding (a,b)
+{
+	var z = a+b;
+	// you can return the value to a specific part of your code
+	return(z);
+}
+//calling a funtion 
+document.getElementById("functionDiv").innerHTML=adding(40,60);
+
+
+//91- Episode : While loop 
+
+// You can think of while loop as As long as the condition is true Excute if not break
+// While loop is important when you don't know how long the loop will be...
+var MyWhileArray=["Amr","Abdeen","is","a","Mechatronics","Engineer"];
+console.log(MyWhileArray.length);
+var i=0;
+while (i<MyWhileArray.length)
+{
+//alert(i);
+i++;
+}
+// The game of this Episode 
+document.getElementById("WhileLoopButton").onclick=function()
+{   var gussess = 1;
+	var Boolean_Check = false;
+	var User_Input = document.getElementById("WhileInput").value;
+	var x ;
+	while ( Boolean_Check==false)
+	{
+		x =Math.floor(Math.random()*6);
+		if ( User_Input==x)
+		{
+			// The place holder in JS is "+Variable Name+" 
+			alert("Your number was "+x+" and it took "+gussess+" gussess");	
+			Boolean_Check = true;
+		}
+		else
+		{  
+		 gussess++; 
+		 // Keep your eay on Number of gussess 
+		 if(gussess > 100) 
+		 	{
+		 		alert("I can't get it"); 
+		 		break; // get ou of the While loop
+		 	}	
+		}
+
+			
+	}
+	
+}
+
+
+// 90- Episode : For Loops
+var ArrayString="My name is :";
+var MyArray=["Amr","Hassan","Rashid","Abdeen"];
+for ( var i=0 ; i< MyArray.length ; i++)
+{
+ArrayString+=MyArray[i];
+//alert(ArrayString);
+//continue ;and break; are working just fine too.
+}
+
+// 89- Episode: How Many Fingers ?
+// Any Complicated Maths Operations( i.e: Power , log , ...) we use Math function 
+document.getElementById("MyFingersButton").onclick=function()
+{
+var power=document.getElementById("MyFingersInput").value;
+//alert(Math.pow(power,power));
+/* 
+To get a random number we use Math.random( No arguments passed) 
+Math.random() creates a number between 0 and 1 and to make it creates a randow values between specific numbers say 
+0 and 5 we multiply the Output by the higher number i.e: 5 Math.random()*5
+*/
+var Maths = Math.random(); // this will randomly create a number between 0 and 1
+Maths*=5; // The number will be between 0 and 5
+// to create an Exact/round number ,with no fractions, we use Math.floor(the desired number);
+Maths=Math.floor(Maths);
+if (power==Maths)
+{
+	//alert(" it Maths! :D ");
+}
+else 
+{
+	//alert("Sorry! try again !")
+}
+}
+
+
+
+// 88- Episode: If statement (Conditions in JS)
+document.getElementById("ConditionalButton").onclick=function()
+{
+
+	var Conditional_Input=document.getElementById("MyConditionalInput").value;
+	// All Conditional Operators Work just perfect
+	if(Conditional_Input >0 || Conditional_Input > -10 )
+	{
+
+		alert("your value is fine");
+	}
+	else 
+	{
+		alert(" Nope ! NO below -10 ,Sir");
+	}
+
+}
+
+/* 87- *** Declaring an Array in JS ***
+
+var MyArray= new Array; // Syntax od declaring an Array in JS. 
+MyArray[0]="Amr";
+MyArray[1]="Abdeen";
+MyArray[2]= "Mechatronics Engineer";
+*/
+// Another Method to declare an Array
+MyOtherArray=["Amr","Abdeen"];
+MyOtherArray.push=("At BFOE");
+// Syntax of ArrayName.splice (the beggining index of removal/Additioin , The End index of removal(=0 if no removal), "Additional string1", "Additional string2",...);
+MyOtherArray.splice(1,0,"Mechatronics Engineer");
+// To show the Array in Browser Window console.log(ArrayName);
+// To show the length of an array to know how many Elements in it console.log(ArrayName.length); and the meaning of length is number of elements in the array 
+console.log(MyOtherArray.length);
+
+
+
+
+var Container = document.getElementById("MyInput").value;
+document.getElementById("Submit").onclick=function()
+{
+document.getElementById("Para").innerHTML=document.getElementById("MyInput").value;
+}
+var DivId ="Circle"
+
+ document.getElementById("Circle").onclick=function() 
+ {
+ 	document.getElementById("Circle").style.display="none";
+ }
+
+ document.getElementById("TextCreator").onclick=function ()
+ {
+ 	document.getElementById("EmptyDiv").innerHTML="<ul><li>Amr</li><li>Abdeen</li></ul>";
+ }
+
+document.getElementById("textAppender").onclick=function()
+{
+document.getElementById("Append").innerHTML= 
+document.getElementById("Append").innerHTML+"Awesome";
+}
+
+document.getElementById("Click").onclick=function()
+{
+document.getElementById("P_Name").innerHTML="My full name is AHRA";	
+}
+
+
+
+</script>
+
+
+
+</body
+
+
+
+</html>
