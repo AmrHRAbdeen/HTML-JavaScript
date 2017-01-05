@@ -1,4 +1,4 @@
-
+//JS Script
 function ColorGenerator ()
 {
 	// if we use .split('') it will split the array into characters 
