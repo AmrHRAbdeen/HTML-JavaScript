@@ -22,6 +22,7 @@ return randomized;
 
 var ClickedTime , Creationtime , ReactionTime1,ReactionTime2 ,RandomTime; 
 
+
 function Display_Again () 
 	{
 		
@@ -57,9 +58,22 @@ function Display_Again ()
 		ReactionTime2=((ClickedTime-Creationtime)/1000)/60;
 		document.getElementById("TimeTableSec").innerHTML=ReactionTime1;
 		document.getElementById("TimeTableMinutes").innerHTML=ReactionTime2;
+		/*
+		//additional feature : you can Automaticlay close the window if the user's time exceeds a specific time 
+		if ( ReactionTime2 > 6) // if the user exceeds 6 minutes close the window 
+	{
+		setTimeout( function()
+		{
+			alert("You exceeded the limited time ! Close Now...");
+			window.close();
+		}, 00);
+		
+		*/
+		
 		//document.getElementById("RedSquare").style.display="none"; or Code it pro. as following
 		this.style.display="none"; // this is refering to the RedSquare we don't need to repeat the same command
 		// to hid a style we set the style.dispaly to none .To show it back we set style.display to block
 		Display_Again();
 	}
-		Display_Again();
+		Display_Again(); 
+	}
