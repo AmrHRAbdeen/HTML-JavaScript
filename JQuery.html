@@ -22,9 +22,27 @@
 <p id="change" > This is the first text </p>
 <button id="ChangeButton">JQuery Change!</button>
 <!-- Changing the attribute of a particular Element -->
-<iframe src="http://www.cnn.com"></iframe>
+<!--<iframe src="http://www.cnn.com"></iframe>-->
 
 <script>
+
+// 5- Changing Styles 
+// to change the style of a particular element use css("style");
+$(".JQuerySquare").click( function ()
+	{
+		alert($(".JQuerySquare").css("width"));
+	});
+// VIP: to return/use the style of any element you click on use "this" , as in JS ,as following:
+$("div").click(function ()
+	{
+		// $(this) means select whatever the element you're currently using  
+		//$(this).css("height"/* specify a style to change*/ ,"400px"/* Don't forget "px" */); // changing the height to 400 px 
+		// you can also hide the using display attribute 
+		//$(this).css("display","none"); or you can use hide(); function i.e: $(this).hide();
+		//using fadeOut(); function 
+		$(this).fadeOut();
+	});
+
 
 // 4- Changing Website Content 
 
