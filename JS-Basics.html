@@ -2,9 +2,15 @@
 <html>
 	<head>
 		<title> JavaScript-Basics </title>
-<style type="text/css">
-#Circle { height: 100px; width: 100px; border-radius: 50px; background-color:blue;}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+
+
+<style type="text/css">
+
+#Circle { height: 100px; width: 100px; border-radius: 50px; background-color:blue;}
+#JQueryCircle { height: 100px;width: 100px ; border-radius: 50px ; background-color: blue;}
+.JQuerySquare { height: 100px ; width: 100px; background-color: red; margin-top: 10px;}
 
 </style>
 	</head>
@@ -50,8 +56,57 @@
  
  
 
- <script type="text/javascript">
+ <script type="text/javascript" >
+
+ // 91- Get started with JQuery : Click function 
+
+ /* 
+JQuery Click function Syntax: 
+
+$("selector").click( function () {
+	
+	alert ("ALERT MESSAGE HERE !");
+});
+
+let's analyze that : 
+$("selector") -->$ String Symbol or Dollar sign is including JQuery 
+-selector is the specific ID or CLASS of a div in HTML Code so $("ID / CLASS") means : we are using JQuery on this specific ID / CLASS. Think of $ as a replacement of document.getElementById("ID/CLASS") in JS .
+The remaining syntax as in JS. 
+ */ 
  
+ $("#JQuerySquare").click(function()
+ {
+
+ 	alert("Hay! we have just used JQuery :D");
+ });
+
+
+
+ // 96- Episode : Embedding JQuery 
+/*
+
+You have to options here : 
+*First : you can download it and save it in the same directory of your website 
+*Second : You can include it ,in the head tag, using the online version provided by a CDN[Content Delivery Network] as following:
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></ script>
+</head> 
+ 
+*/
+
+
+
+ //95- Episoed : JQuery it's a JS framework check jqueryui.com (it's open source)
+ /*
+-There're great options/features in jqueryui.com ( Check them out )
+-Pull to refresh is a good feature for mobile apps and websites (Search for it if you want to use it)
+-Tool tips : Gives you a tip about tools
+-Pop ups  : To interactive with the user
+-Jquery Sliders : For sliders 
+-Type ahead : To predict want you want to write 
+...
+*/
+
 // 94- Episode: JavaScript Project
 /* *************** In a separate File :D ********/
 

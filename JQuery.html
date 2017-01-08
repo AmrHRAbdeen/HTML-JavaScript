@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<!-- when you include the JQuery file Don't forget to add the extension .js -_- -->
+	<style type="text/css">	
+		#JQueryCircle { height: 200px; width: 200px ; border-radius: 100px ; background-color: green;}
+		.JQuerySquare { height: 200px ; width: 200px; background-color: red; margin-top: 10px;}
+	</style>
+</head>
+<body>
+<!--2- Episode : Embedding JQuery -->
+<div class="JQuerySquare"></div>
+<div class="JQuerySquare"> </div>
+<div id="JQueryCircle"</div> 
+<script>
+// 1- Get started with JQuery : Click function 
+
+ /* 
+JQuery Click function Syntax: 
+
+$("selector").click( function () {
+	
+	alert ("ALERT MESSAGE HERE !");
+});
+
+let's analyze that : 
+$("selector") -->$ String Symbol or Dollar sign is including JQuery to select an element
+-selector is the specific ID or CLASS of a div or a div itself in HTML Code so $("ID / CLASS / DIV") means : we are using JQuery on this specific ID / CLASS. Think of $ as a replacement of document.getElementById("ID/CLASS/DIV") in JS .
+The remaining syntax as in JS. 
+ */ 
+ 
+ $("#JQueryCircle").click(function()
+ {
+alert("Hay! we have just used JQuery :D");
+ });
+
+
+</script>
+</body>
+</html>
