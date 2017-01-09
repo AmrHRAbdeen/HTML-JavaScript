@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery-Basics</title>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<!-- when you include the JQuery file Don't forget to add the extension .js -_- -->
+	<style type="text/css">	
+		#JQueryCircle { height: 100px; width: 100px ; border-radius: 50px ; background-color: green;}
+		.JQuerySquare { height: 100px ; width: 100px; background-color: red; margin: 5px;}
+	</style>
+</head>
+<body>
+<!--2- Episode : Embedding JQuery -->
+<div class="JQuerySquare"></div>
+<div class="JQuerySquare"> </div>
+<div id="JQueryCircle"</div> 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<!--4- Episode Changing Website content -->
+<p id="change"> This is the first text </p>
+<button id="ChangeButton">JQuery Change!</button>
+
+<!-- Changing the attribute of a particular Element -->
+<!--<iframe src="http://www.cnn.com"></iframe>-->
+<br />
+<br />
+<!-- Fading Content -->
+<p id="FadeText"> Fade Me in and out </p>
+<button id="FadeIn">FadeIn</button>
+<button id="FadeOut">FadeOut</button>
+
+
+<script>
+
+// 9- Regular Expressions : are pattern of character you can use to see if a particular string is from a particular format , you might use it to search for a particular word in a string or to check a format of an email address or passwords specific format.
+// declaring a regular expression called "regex".
+var regex =/great/i; // i is used for case insensitive which means it will search for Great or gReat or GrEat etc...
+ var regex2 = /e/g; // g stands for global and it will search globally about letter e in the string 
+var string="Regex is Great";
+// to match regex variable with the string use use a match function 
+var result = string.match(regex2);
+alert(result);
+
+// 8- JQuery / AJAX 
+// AJAX (Asynchronous JavaScript And XML : Asynchronous means it happens in the background which allows you to run other JS codes at the same time , XML discussed in APIs) 
+// AJAX is allowing you to load other files from the web server while the user is using the website without refreshing or loading the page which increases the UX "User Experience".
+// AJAx is not running on a file protocole ( your PC ) , you have to use a http/s protocole (server protocole).
+// You can use 000webhost.com for free hosting
+// make sure to load JQuery CDN url .
+// make a file to load in the web server.
+// in the script use $.get("source","destination"); 
+$.get("text.html", function (data)// this will load the text file content into the data variable so you can do whatever you need with that variable.
+ {
+ 	alert(data);
+ }); 
+
+// you can use ajax function as it gives you more control as when the user connection is down you can display a fail connection message to him 
+
+$.ajax({url:"text.html"}).done(function(data){
+	// to change the html of an element or use append(data) to add more information to it...
+  $("#change").html(data);
+});
+
+
+//7- Animate the contents
+
+// Animatiion in JQuery using animate ({the paramters to animate : " yy px"} , animation time in ms);
+// It's useful when you have a small icon and you want to enlarge them when the user click on them 
+$("#JQueryCircle").click(function (){
+
+	$(this).animate(
+		{
+			width:"300px",
+			height:"300px",
+			borderRadius:"150px",
+			marginLeft :"100px",
+			marginTop : "100px"
+		},500);
+});
+
+
+// 6- Fading content 
+// fadeIn(); and fadeOut(); has input parameter which determines the duration of fading in and out in milliseconds i.e: fadeIn(2000); the fade in duration is 2 seconds ... this is animation :D you can use words such as "fast" , "slow",...
+// you can also  add anothe function as input parameter of fade functions ; which called "Call back function"     aka (as know as) Higher-order Functions
+/*
+In JavaScript, functions are first-class objects; that is, functions are of the type Object and they can be used in a first-class manner like any other object (String, Array, Number, etc.) since they are in fact objects themselves. They can be “stored in variables, passed as arguments to functions, created within functions, and returned from functions ;This is the essence of using callback functions in JavaScript.
+Callback functions are derived from a programming paradigm known as functional programming.At a fundamental level, functional programming specifies the use of functions as arguments.
+If you will use the syntax of a callback function inside the input paramter of another function , so it has no name , it's called anonymous function.
+*/ 
+$("#FadeIn").click(function()
+{
+$("#FadeText").fadeIn(1000 ,/* Anonymous callback function*/ function ()
+	{
+		alert("It's a callbck function");
+	});
+});
+
+$("#FadeOut").click(function()
+{
+$("#FadeText").fadeOut(3000);
+});
+
+
+// 5- Changing Styles 
+// to change the style of a particular element use css("style");
+$(".JQuerySquare").click( function ()
+	{
+		alert($(".JQuerySquare").css("width"));
+	});
+// VIP: to return/use the style of any element you click on use "this" , as in JS ,as following:
+//$("div").click(function ()
+	//{
+		// $(this) means select whatever the element you're currently using  
+		//$(this).css("height"/* specify a style to change*/ ,"400px"/* Don't forget "px" */); // changing the height to 400 px 
+		// you can also hide the using display attribute 
+		//$(this).css("display","none"); or you can use hide(); function i.e: $(this).hide();
+		//using fadeOut(); function 
+		//$(this).fadeOut();
+	//});
+
+
+// 4- Changing Website Content 
+
+$("#ChangeButton").click ( function()
+	{
+		// html function in JQuery allows you to change the content of a particular Element .
+		// Generally , in JQuery if you call a fuction [ i.e: html(); ] it will return the content of an element ,but if you put something [ i.e: html(" That's something");] that will update the element attribute/content.
+		$("#change").html("The text has been changed!");
+	});
+// using hover function
+$("#ChangeButton").hover(function () 
+	{
+		$("#change").html("New Text it's hover age !");
+	});
+
+// Changing the attribute of a particular Element using attr() function.
+$("#ChangeButton	").hover(function ()
+{
+$("iframe").attr("src" , "http://www.bbc.com/news");
+
+});
+
+
+// 3- Get started with JQuery : Click function 
+
+ /* 
+JQuery Click function Syntax: 
+
+$("selector").click( function () {
+	
+	alert ("ALERT MESSAGE HERE !");
+});
+
+let's analyze that : 
+$("selector") -->$ String Symbol or Dollar sign is including JQuery to select an element
+-selector is the specific ID or CLASS of a div or a div itself in HTML Code so $("ID / CLASS / DIV") means : we are using JQuery on this specific ID / CLASS. Think of $ as a replacement of document.getElementById("ID/CLASS/DIV") in JS .
+The remaining syntax as in JS. 
+ */ 
+ 
+ $(".JQuerySquare").click(function()
+ {
+alert("Hay! we have just used JQuery :D");
+ });
+
+
+
+// 2- Episode : Embedding JQuery 
+/*
+
+You have to options here : 
+*First : you can download it and save it in the same directory of your website 
+*Second : You can include it ,in the head tag, using the online version provided by a CDN[Content Delivery Network] as following:
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></ script>
+</head> 
+ 
+*/
+
+
+
+ //1- Episoed : JQuery it's a JS framework check jqueryui.com (it's open source)
+ /*
+-There're great options/features in jqueryui.com ( Check them out )
+-Pull to refresh is a good feature for mobile apps and websites (Search for it if you want to use it)
+-Tool tips : Gives you a tip about tools
+-Pop ups  : To interactive with the user
+-Jquery Sliders : For sliders 
+-Type ahead : To predict want you want to write 
+...
+*/
+
+</script>
+</body>
+</html>
