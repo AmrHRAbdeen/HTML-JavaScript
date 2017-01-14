@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>JQuery-Basics</title>
-	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<!-- when you include the JQuery file Don't forget to add the extension .js -_- -->
 	<style type="text/css">	
 		#JQueryCircle { height: 100px; width: 100px ; border-radius: 50px ; background-color: green;}
@@ -37,6 +37,19 @@
 
 <script>
 
+// 10-JQuery UI : It's a user interface plugin for jQuery found on jqueryui.com
+
+
+
+
+
+
+
+
+
+
+
+
 // 9- Regular Expressions : are pattern of character you can use to see if a particular string is from a particular format , you might use it to search for a particular word in a string or to check a format of an email address or passwords specific format.
 // declaring a regular expression called "regex".
 var regex =/great/i; // i is used for case insensitive which means it will search for Great or gReat or GrEat etc...
@@ -44,7 +57,7 @@ var regex =/great/i; // i is used for case insensitive which means it will searc
 var string="Regex is Great";
 // to match regex variable with the string use use a match function 
 var result = string.match(regex2);
-alert(result);
+//alert(result);
 
 // 8- JQuery / AJAX 
 // AJAX (Asynchronous JavaScript And XML : Asynchronous means it happens in the background which allows you to run other JS codes at the same time , XML discussed in APIs) 
@@ -56,7 +69,7 @@ alert(result);
 // in the script use $.get("source","destination"); 
 $.get("text.html", function (data)// this will load the text file content into the data variable so you can do whatever you need with that variable.
  {
- 	alert(data);
+ 	//alert(data);
  }); 
 
 // you can use ajax function as it gives you more control as when the user connection is down you can display a fail connection message to him 
