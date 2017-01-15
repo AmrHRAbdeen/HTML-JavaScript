@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery User Interface [UI] </title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+	</script>
+	
+	<style type="text/css">
+			#Square 
+			{
+				width:200px;
+				height:200px;
+				background-color: green;
+			}
+
+	</style>
+
+</head>
+
+<body>
+	<div id="Square"></div>
+	<!-- For AutoScroll -->
+	<div id="draggable" class="ui-widget-content">
+	<div id="draggable2" class="ui-widget-content">
+	<div id="draggable3" class="ui-widget-content"> 
+	<div style="height: 5000px; width: 1px;"></div>
+<script>
+		$("#Square").draggable();
+		/*// For AutoScroll 
+		$( function()
+		 {
+    		$( "#draggable" ).draggable({ scroll: true });
+   			$( "#draggable2" ).draggable({ scroll: true, scrollSensitivity: 100 });
+   		 	$( "#draggable3" ).draggable({ scroll: true, scrollSpeed: 100 });
+ 		 });	*/
+</script>
+
+
+</body>
+</html>
