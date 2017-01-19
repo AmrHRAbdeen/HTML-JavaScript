@@ -3,38 +3,421 @@
 <head>
 	<title>JQuery User Interface [UI] </title>
 	<meta charset="utf-8" />
-	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
-	</script>
+	<!-- JQuery UI Style sheet Google CDN "Put it before the JQuery JS file" used for resizabel plugin -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<!-- JQuery script should be before JQuery ui script caz the browser interpreter is sequential -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	 <script src="http://resources/demos/external/jquery-mousewheel/jquery.mousewheel.js"></script>
+	
 	
 	<style type="text/css">
-			#Square 
-			{
-				width:200px;
-				height:200px;
-				background-color: green;
-			}
-
+				#Square 
+				{	
+					width:100px;
+					height:100px;
+					background-color: green;
+				}
+				#targetSquare
+				{
+					width:200px;
+					height:200px;
+					border-radius:5px;
+					background-color:blue;
+				}
+				#clear
+				{
+				 clear: both;
+				}
+				/* Selectable List style */ 
+  				#feedback { font-size: 1.4em; }
+  	  			#selectable .ui-selecting { background: #FECA40; }
+    			#selectable .ui-selected { background: #F39814; color: white; }
+    			#selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+    			#selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+    			/* Selectable Grid Style */
+    			#feedback { font-size: 1.4em; }
+    			#selectable2 .ui-selecting { background: #FECA40; }
+    			#selectable2 .ui-selected { background: #F39814; color: white; }
+    			#selectable2 { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+    			#selectable2 li { margin: 3px; padding: 1px; float: left; width: 100px; height: 80px; font-size: 4em; text-align: center;}
+  				/* Auto complete Combobox styles*/
+  				 .custom-combobox {
+    			position: relative;
+       			display: inline-block;
+     			}
+     			.custom-combobox-toggle {
+       			position: absolute;
+       			top: 0;
+       			bottom: 0;
+       			margin-left: -1px;
+      			 padding: 0;
+     			}
+     			.custom-combobox-input {
+      			 margin: 0;
+       			padding: 5px 10px;
+     			}
+     			#map 
+     			{
+    				width:500px;
+  				   height:500px;
+ 				}
 	</style>
 
 </head>
 
 <body>
+	
 	<div id="Square"></div>
-	<!-- For AutoScroll -->
-	<div id="draggable" class="ui-widget-content">
-	<div id="draggable2" class="ui-widget-content">
-	<div id="draggable3" class="ui-widget-content"> 
+	<div id="targetSquare"></div>
+	<div id="accordion">
+		<h3> Text </h3>
+		<div>
+			<p> this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.</p>
+		</div>
+
+		<h3> Text </h3>
+		<div>
+			<p> this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.</p>
+		</div>
+
+		<h3> Text </h3>
+		<div>
+			<p> this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.</p>
+		</div>
+
+		<h3> Text </h3>
+		<div>
+			<p> this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.</p>
+		</div>
+
+		<h3> Text </h3>
+		<div>
+			<p> this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.</p>
+		</div>
+
+		<h3> Text </h3>
+		<div>
+			<p> this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.
+			this is text.this is text.this is text.this is text.this is text.this is text.</p>
+		</div>
+	</div>	
+	<h3>**sortable List**<h3>
+	<ul id="sortableList">
+		<li> Home </li>
+		<li> Products </li>
+		<li> New items </li>
+		<li> Sales </li>
+		<li> Contact Us </li>
+		</ul>
+	</ul>
+
+	<h3>**selectable List**<h3>
+	<ol id="selectable">
+		<li> That's One </li>
+		<li> That's Two </li>
+		<li> That's Three </li>
+	</ol>
+
+	<h3>**selectable Grid**<h3>
+	<ol id="selectable2">
+  <li class="ui-state-default">1</li>
+  <li class="ui-state-default">2</li>
+  <li class="ui-state-default">3</li>
+  <li class="ui-state-default">4</li>
+  <li class="ui-state-default">5</li>
+  <li class="ui-state-default">6</li>
+  <li class="ui-state-default">7</li>
+  <li class="ui-state-default">8</li>
+  <li class="ui-state-default">9</li>
+  <li class="ui-state-default">10</li>
+  <li class="ui-state-default">11</li>
+  <li class="ui-state-default">12</li>
+</ol>
+
+<div id="clear"></div><br />
+<!-- Using Auto Complete -->
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags" value="">
+</div>
+<div id="clear"></div><br />
+<!-- AutoComplete Combobox-->
+<div class="ui-widget">
+  <label>Your preferred programming language: </label>
+  <select id="combobox">
+    <option value="">Select one...</option>
+    <option value="ActionScript">ActionScript</option>
+    <option value="AppleScript">AppleScript</option>
+    <option value="Asp">Asp</option>
+    <option value="BASIC">BASIC</option>
+    <option value="C">C</option>
+    <option value="C++">C++</option>
+    <option value="Clojure">Clojure</option>
+    <option value="COBOL">COBOL</option>
+    <option value="ColdFusion">ColdFusion</option>
+    <option value="Erlang">Erlang</option>
+    <option value="Fortran">Fortran</option>
+    <option value="Groovy">Groovy</option>
+    <option value="Haskell">Haskell</option>
+    <option value="Java">Java</option>
+    <option value="JavaScript">JavaScript</option>
+    <option value="Lisp">Lisp</option>
+    <option value="Perl">Perl</option>
+    <option value="PHP">PHP</option>
+    <option value="Python">Python</option>
+    <option value="Ruby">Ruby</option>
+    <option value="Scala">Scala</option>
+    <option value="Scheme">Scheme</option>
+  </select>
+</div>
+<button id="toggle">Show underlying select</button>
+<div id="clear"></div><br />
+<h2> Map using Google API </h2>
+<label for="lat">Latitude</label>
+<input id="lat" name="lat" value="44.797">
+<br /><div id="clear"></div><br />
+<label for="lng">Longitude</label>
+<input id="lng" name="lng" value="-93.278">
+ 
+<div id="map"></div>
+
+	<!-- Used for Autoscroll should be the last line of your page-->	
 	<div style="height: 5000px; width: 1px;"></div>
+
+
 <script>
+		// You can apply draggable to any web Element ( picture , form ,etc.)
 		$("#Square").draggable();
-		/*// For AutoScroll 
+		// You can apply resizable to any web Element ( picture , form ,etc.)
+		$("#Square").resizable();
+		// using droppable if you want people to interact with your website graphically by dropping things ...
+		$("#targetSquare").droppable({
+			drop: function (ui, event)
+			{
+				$("#targetSquare").css("background-color","red");
+			}
+		});
+		// For paragraphes arrangement:use Accordion and sortables[both require smoothness color theme (style sheet)]
+		//accordion is the div that conatains all the texts
+		$("#accordion").accordion();
+		//sortable lists : obviously used with lists
+		$("#sortableList").sortable();
+		$("#selectable").selectable();
+		$("#selectable2").selectable();
+		// Autocomplete
 		$( function()
 		 {
-    		$( "#draggable" ).draggable({ scroll: true });
-   			$( "#draggable2" ).draggable({ scroll: true, scrollSensitivity: 100 });
-   		 	$( "#draggable3" ).draggable({ scroll: true, scrollSpeed: 100 });
- 		 });	*/
+    var availableTags = 
+    [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete
+  	   ({
+    	source: availableTags
+    	});
+  	});
+	
+	// AutoComplete Combobox
+	$( function() {
+    $.widget( "custom.combobox", {
+      _create: function() {
+        this.wrapper = $( "<span>" )
+          .addClass( "custom-combobox" )
+          .insertAfter( this.element );
+ 
+        this.element.hide();
+        this._createAutocomplete();
+        this._createShowAllButton();
+      },
+ 
+      _createAutocomplete: function() {
+        var selected = this.element.children( ":selected" ),
+          value = selected.val() ? selected.text() : "";
+ 
+        this.input = $( "<input>" )
+          .appendTo( this.wrapper )
+          .val( value )
+          .attr( "title", "" )
+          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
+          .autocomplete({
+            delay: 0,
+            minLength: 0,
+            source: $.proxy( this, "_source" )
+          })
+          .tooltip({
+            classes: {
+              "ui-tooltip": "ui-state-highlight"
+            }
+          });
+ 
+        this._on( this.input, {
+          autocompleteselect: function( event, ui ) {
+            ui.item.option.selected = true;
+            this._trigger( "select", event, {
+              item: ui.item.option
+            });
+          },
+ 
+          autocompletechange: "_removeIfInvalid"
+        });
+      },
+ 
+      _createShowAllButton: function() {
+        var input = this.input,
+          wasOpen = false;
+ 
+        $( "<a>" )
+          .attr( "tabIndex", -1 )
+          .attr( "title", "Show All Items" )
+          .tooltip()
+          .appendTo( this.wrapper )
+          .button({
+            icons: {
+              primary: "ui-icon-triangle-1-s"
+            },
+            text: false
+          })
+          .removeClass( "ui-corner-all" )
+          .addClass( "custom-combobox-toggle ui-corner-right" )
+          .on( "mousedown", function() {
+            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
+          })
+          .on( "click", function() {
+            input.trigger( "focus" );
+ 
+            // Close if already visible
+            if ( wasOpen ) {
+              return;
+            }
+ 
+            // Pass empty string as value to search for, displaying all results
+            input.autocomplete( "search", "" );
+          });
+      },
+ 
+      _source: function( request, response ) {
+        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+        response( this.element.children( "option" ).map(function() {
+          var text = $( this ).text();
+          if ( this.value && ( !request.term || matcher.test(text) ) )
+            return {
+              label: text,
+              value: text,
+              option: this
+            };
+        }) );
+      },
+ 
+      _removeIfInvalid: function( event, ui ) {
+ 
+        // Selected an item, nothing to do
+        if ( ui.item ) {
+          return;
+        }
+ 
+        // Search for a match (case-insensitive)
+        var value = this.input.val(),
+          valueLowerCase = value.toLowerCase(),
+          valid = false;
+        this.element.children( "option" ).each(function() {
+          if ( $( this ).text().toLowerCase() === valueLowerCase ) {
+            this.selected = valid = true;
+            return false;
+          }
+        });
+ 
+        // Found a match, nothing to do
+        if ( valid ) {
+          return;
+        }
+ 
+        // Remove invalid value
+        this.input
+          .val( "" )
+          .attr( "title", value + " didn't match any item" )
+          .tooltip( "open" );
+        this.element.val( "" );
+        this._delay(function() {
+          this.input.tooltip( "close" ).attr( "title", "" );
+        }, 2500 );
+        this.input.autocomplete( "instance" ).term = "";
+      },
+ 
+      _destroy: function() {
+        this.wrapper.remove();
+        this.element.show();
+      }
+    });
+ 
+    $( "#combobox" ).combobox();
+    $( "#toggle" ).on( "click", function() {
+      $( "#combobox" ).toggle();
+    });
+  } );
+
+// Map 
+$( function() {
+    function latlong() {
+      return new google.maps.LatLng( $("#lat").val(), $("#lng").val() );
+    }
+    function position() {
+      map.setCenter( latlong() );
+    }
+    $( "#lat, #lng" ).spinner({
+      step: .001,
+      change: position,
+      stop: position
+    });
+ 
+    var map = new google.maps.Map( $("#map")[0], {
+      zoom: 8,
+      center: latlong(),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+  } );
+		
 </script>
 
 
