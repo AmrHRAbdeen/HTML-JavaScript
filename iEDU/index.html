@@ -1,119 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>iEDU</title>
-	<script type="text/javascript" src="E:\Freelancing\Training\JS\jquery-3.1.1.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
-	<style type="text/css">
-	
-	body
+	<title>iEDU Interactive Education</title>
+	<style>
+	html
 	{
-		font-family: 'Amiri', serif;
-		direction: rtl;
+		margin:0;
+		padding:0;
 	}
-	#MainTitle
-	{
-		margin: 0 auto;
+	#wrapper
+	{	
+		margin:0 auto;
+		width:1150px;
+		height:1000px;
+		background-image:url(images/1pxBG.png);
+		background-repeat:repeat-x;
 	}
-	#SideBar 
+	#logo
 	{
-	 height: 800px;
-	  width: 180px;
-	  background-color:#60a4f7;
-	  float: right;
+		width:315px;
+		height:152px;
+		margin:0 auto;
+		padding-top:70px;
 	}
-	#EgyFaculties
-	{
-		font-size: 1.5em;
-		float: right;
-		margin: 20px;
-	}
-	#CollagesList
-	{
-		float: right;
-		
-		font-size: 1.2em;
-		direction: rtl;
-		margin-right: -15px;
-		margin-top: -10px;
 
-	}
-	#CollagesList li
-	{
-		margin: 5px;
-	}
-	#CollagesList li:hover 
-	{
-		color: green;
-	}
-	.iFrameID
-	{
-		margin: 10px;
-		border-right: 10px;
-	}
+	input 
+		{ 
+			width: 300px; 
+		 	height: 20px;									
+			border-radius: 5px;
+			font-size: 1.1em;
+			border: 1px solid grey;
+			padding:8px;
+		}
+
+		#email
+		{
+			margin-left:350px;
+			margin-right:20px;
+		}
+		.clear
+		{
+			clear:both;
+		}
+		#infoGrapic
+		{
+			margin-top:70px;
+			margin-left:35px;
+			float:left;
+		}
+		#newAccount
+		{
+			color:white;
+			font-size:2em;
+			font-weight:bold;
+			margin-right:180px;
+			/*background-color:grey;*/
+			float:right;
+			margin-top:90px;
+		}
+		#footer
+		{
+			margin-top:200px;
+		}
+		
 	</style>
 </head>
-
 <body>
-
-<div id="container">
-
-<h2 id="MainTitle">iEDU</h2>
-
-	<div id="SideBar">
-		<div id="Faculties">
-			<p id="EgyFaculties">الجامعات المصريه</p>
-				<br />
-				<ul id="CollagesList">
-				
-				<a href="E:\Freelancing\Training\JS\iEDU\pages\cairouni.html"><li> جامعة القاهره </li></a>
-			
-				<a href=""><li>جامعة الاسكندريه </li></a>
-				
-				<a href=""><li>جامعة بنها</li></a>
-				
-				<a href=""><li>جامعة حلوان </li></a>
-				
-				<a href=""><li>جامعة أسيوط </li></a>
-				
-				<a href=""><li>جامعة بني سويف </li></a>
-				
-				<a href=""><li>جامعة بورسعيد</li></a>
-
-				<a href=""><li> جامعة القاهره </li></a>
-			
-				<a href=""><li>جامعة الاسكندريه </li></a>
-				
-				<a href=""><li>جامعة بنها</li></a>
-				
-				<a href=""><li>جامعة حلوان </li></a>
-				
-				<a href=""><li>جامعة أسيوط </li></a>
-				
-				<a href=""><li>جامعة بني سويف </li></a>
-				
-				<a href=""><li>جامعة بورسعيد</li></a> 
-
-				</ul>
-				
+	<div id="wrapper">
+		<div id="logo">
+			<a href="#"><img src="images/logo.png" alt="iEDU logo" title="iEDU logo" width="315" height="152"/></a>
 		</div>
-	</div>
+			<!-- Login -->
+		<div id="login">
+			<form id="loginValidation">
+				<input id="email"style="height:20px; width:200px;margin-top:20px;"type="email" placeholder="Enter your Email"/>
 
-<iframe class="iFrameClass" width="460" height="215" src="https://www.youtube.com/embed/HkPIaMGjKts" frameborder="0" allowfullscreen></iframe>
-<iframe class="iFrameClass" width="460" height="215" src="https://www.youtube.com/embed/imMToE9Q5bE" frameborder="0" allowfullscreen></iframe>
-<iframe class="iFrameClass" width="460" height="215" src="https://www.youtube.com/embed/HkPIaMGjKts" frameborder="0" allowfullscreen></iframe>
-<iframe class="iFrameClass" width="460" height="215" src="https://www.youtube.com/embed/imMToE9Q5bE" frameborder="0" allowfullscreen></iframe>
-<iframe class="iFrameClass" width="460" height="215" src="https://www.youtube.com/embed/HkPIaMGjKts" frameborder="0" allowfullscreen></iframe>
-<iframe class="iFrameClass"  width="460" height="215" src="https://www.youtube.com/embed/imMToE9Q5bE" frameborder="0" allowfullscreen></iframe>
+				<input id="password" style="height:20px; width:200px;margin-top:20px;"type="password" placeholder="Password"/>
+				<div class="clear"></div>
+				<input style="background-color:white;width:100px;margin-left:520px; margin-top:10px;height:40px;color:#1b9fcf;font-weight:bold;padding-top:5px;" id="SubmitButton" type="submit" value="login"/>
+			</form>
+		<div id="infoGrapic">
+			<img src="images/infographic.png" alt="iEDU targets" title="iEDU infographic"/>
+		</div>
+		<!--Create New Account -->
+		<p id="newAccount"> Create New Account </p>
+		<form id="createNewAccount">
+		<input id="firstName" style="width:200px;margin-left:20px;margin-left:80px;" placeholder="Your first name"/>
+		<input id="lastName" style="width:200px;float:right;margin-right:80px;" placeholder="Your last name"/>
+		<input id="createEmail" type="email" placeholder="Enter your email address" style="margin-left:80px;margin-top:20px;width:440px;"/>
+		<input id="createEmail" type="password" placeholder="Enter your password" style="margin-left:80px;margin-top:20px;width:440px;"/>
+		<input id="createEmail" type="password" placeholder="Confirm password" style="margin-left:80px;margin-top:20px;width:440px;"/>
+		<input style="background-color:white;width:180px;margin-left:220px; margin-top:20px;height:40px;color:#1b9fcf;font-weight:bold;" id="SubmitButton" type="submit" value="Create account"/>
+		</form>
+		</div>
+		<p style="margin-top:215px;position:absolute;margin-left:460px;color:white;font-size:1.2em;"> 
+		All copyrights reserved for iEDU corp. </p>
+		<div id="footer">
+			<img src="images/footer.png"/>
+		</div>
+	</div>	
 
-<script>
-	$("#SideBar").hover( function ()
-		{
-			$("#SideBar").css("opacity","none");
-		});
-
-
-</script>
-</div>
 </body>
 </html>
