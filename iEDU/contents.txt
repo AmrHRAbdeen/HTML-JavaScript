@@ -1,0 +1,19 @@
+
+** Content Management System (CMS) **
+--------------------------------------
+
+- Database
+
+Registration / Login / Log out
+Users ( Add / Edit / Delete )
+
+File upload 
+Library (Images - Videos )
+
+Site Contents :
+		-Sections (Each section has a related pages...)
+		-Pages (Add / Edit /Delete)
+Comments
+
+Newsletter
+Mail Center
