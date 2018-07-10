@@ -220,36 +220,66 @@ to commit our changes so we can keep tracking of it .commiting changes means we 
 <h3 style="font-color:red">Git Ignore</h3>
 <div>
 	<p>	
-If you want to keep a file in your project's directory structure but make sure it isn't accidentally committed to the project,
-you can use the specially named file, .gitignore (note the dot at the front, it's important!). 
+	If you want to keep a file in your project's directory structure but make sure it isn't accidentally committed to the project,
+	you can use the specially named file, .gitignore (note the dot at the front, it's important!). 
 	Add this file to your project in the same directory that the hidden .git directory is located. 
 	All you have to do is list the names of files that you want Git to ignore (not track) and it will ignore them.
 	</p>
 	</div>
 	
-	<h3>Globbing Crash Course</h3>
-	<div>
-	
-Let's say that you add 50 images to your project, but want Git to ignore all of them. 
-Does this mean you have to list each and every filename in the .gitignore file? Oh gosh no, that would be crazy! 
-Instead, you can use a concept called globbing.
+<h3>Globbing Crash Course</h3>
+<div>
+		Let's say that you add 50 images to your project, but want Git to ignore all of them. 
+		Does this mean you have to list each and every filename in the .gitignore file? Oh gosh no, that would be crazy! 
+		Instead, you can use a concept called globbing.
 
-Globbing lets you use special characters to match patterns/characters. In the .gitignore file, you can use the following:
+	Globbing lets you use special characters to match patterns/characters. In the .gitignore file, you can use the following:
 
-blank lines can be used for spacing
-# - marks line as a comment
-* - matches 0 or more characters
-? - matches 1 character
-[abc] - matches a, b, or c
-** - matches nested directories - a/**/z matches
-a/z
-a/b/z
-a/b/c/z
-So if all of the 50 images are JPEG images in the "samples" folder, we could add the following line to .gitignore to have Git ignore all 50 images.
+	blank lines can be used for spacing
+	# - marks line as a comment
+	* - matches 0 or more characters
+	? - matches 1 character
+	[abc] - matches a, b, or c
+	** - matches nested directories - a/**/z matches
+	a/z
+	a/b/z
+	a/b/c/z
+	So if all of the 50 images are JPEG images in the "samples" folder, we could add the following line to .gitignore to have Git ignore all 50 images.
 
-samples/*.jpg
+	samples/*.jpg
 		
+</div>	
+
+	<h3>Tagging</h3>
+	
+	<div>
+		<p> Tagging: is giving a specific commit a specific name like: V1.0 </p>
+		The command we'll be using to interact with the repository's tags is the git tag command:
+
+		<code>$ git tag -a v1.0</code>
+		
+		<h4>Verify Tag </h4>
+		<p>
+			After saving and quitting the editor, nothing is displayed on the command line. 
+			So how do we know that a tag was actually added to the project? If you type out just 
+			<span style="font-weight:bold">git tag</span>, 
+			it will display all tags that are in the repository.
+		</p>
 	</div>	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </div>
 <footer>
 <h4 style="text-align:center;"> By: Amr Abdeen >> Mechatronicsawy </h4>
