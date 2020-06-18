@@ -145,11 +145,16 @@
 				#<span style="font-weight:bold">fdf5493 </span> is the SHA number
 	</div>
 
-	 <h3>Viewing Users Updates/Changes</h3>
+	<h3>Viewing Users Updates/Changes</h3>
 	<div>
 	<p>git log --author="Name" : to view changes by a specifi user in the project team</p>
 	</div>
-
+	
+	<!-- How to change/Edit commit message -->
+	<h3>git commit --amend | Change specific commit message</h3>
+	<div>
+	<p>git commit --amend : </p>
+	</div>
 
 	 <h3>Viewing files Status</h3>
 	<div>
@@ -164,6 +169,7 @@
 	<div>
 	<p>shift+Q : to exit from any text page</p>
 	</div>
+	
 
 	 <h3>View the difference between file versions</h3>
 	<div>
@@ -215,7 +221,7 @@
 
 	  <h3>Back to a specific commit</h3>
 	<div>
-	<p>git checkout commitNumber -- file.extension : to get back to a specific commit but firstly, you have to check the git log to know the commitNumber (mostly like a hash number.) and then you have to commit these changes.</p>
+	<p>git checkout commitNumber -- file.extension : to get back to a specific commit but firstly, you have to check the <code>git log</code> to know the commitNumber (mostly like a hash number.) and then you have to commit these changes.</p>
 	</div>
 
 	<h3 style="font-color:red">Git Ignore</h3>
@@ -311,6 +317,9 @@
 				<code> 3- Push your branch to the remote repository: </code> <br><br>
 				<code>  <span style="font-weight:bold">  git push -u origin feature_branch_name  </span> </code> <br><br>
 				<br><br>
+				<h3> To visualize the branches </h3>
+				<p> you can use <span style="font-weight">gitk</span> in git bash </p>
+				<br><br>
 				<a href="https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222" target="_blank">Read More about branching>> </a>
 
 				<h6>  </h6>
@@ -338,11 +347,6 @@
 					<br> <br>		
 					<code> git branch -D branch-name </code>
 					</p>
-
-			
-			
-			
-			
 			</p>
 		</div>
 		<h3> Fetch </h3>
@@ -352,17 +356,7 @@
 				 it doesn’t force you to actually merge the changes into your repository.
 				Git isolates fetched content as a from existing local content, it has absolutely no effect on your local development work.
 				<br> <br>
-				
-				<h2> How to create a branch ? </h2>
-				<p> git checkout - b "BranchName" </p>
-				
-				<h2> To add files to the branch : </h2>
-				   <p>A- Add it </p>
-				   <p>B- Commit it </p>
-				   <p>C- Push it  to the branch </p>
-				
-				<h3> To visualize the branches </h3>
-				 <p> you can use gitk in git bash </p>
+				<code>git fetch</code>
 			</p>
 		</div>		
 	</div>
